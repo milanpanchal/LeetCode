@@ -76,7 +76,7 @@ class Solution {
 
     
     func findLevel(_ root: TreeNode?, _ val: Int, _ level: Int) -> Int {
-    
+
         guard let node = root else {
             return 0
         }
@@ -113,3 +113,38 @@ obj.isCousins(node, 4, 5)
 
 
 
+class RevisedSolution {
+    func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
+       guard let root = root else { return false }
+    
+        var q = [root]
+        var parentX: Int?, parentY: Int?
+
+        while !q.isEmpty {
+            print(q.map({ return $0.val}))
+            for _ in 0..<q.count {
+                let curr = q.removeFirst()
+                if let l = curr.left {
+                    q.append(l)
+                    if l.val == x { parentX = curr.val }
+                    else if l.val == y { parentY = curr.val }
+                }
+                if let r = curr.right {
+                    q.append(r)
+                    if r.val == x { parentX = curr.val }
+                    else if r.val == y { parentY = curr.val }
+                }
+            }
+
+            if parentX != nil, parentY != nil, parentX! != parentY! { return true }
+
+            // clear
+            parentX = nil
+            parentY = nil
+        }
+
+        return false
+    }
+}
+
+RevisedSolution().isCousins(node, 4, 5)
