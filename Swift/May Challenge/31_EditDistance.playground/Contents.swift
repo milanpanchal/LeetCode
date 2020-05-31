@@ -51,7 +51,26 @@ import UIKit
 
 func minDistance(_ word1: String, _ word2: String) -> Int {
 
-    return 0
+    if word1 == word2 { return 0 }
+    
+    var dp = Array(repeating: Array(repeating: 0, count: word2.count+1), count: word1.count+1)
+    let word1Array = Array(word1)
+    let word2Array = Array(word2)
+    
+    for i in 0...word1.count {
+        for j in 0...word2.count {
+            if i == 0 {
+                dp[i][j] = j
+            } else if j == 0 {
+                dp[i][j] = i
+            } else if word1Array[i-1] == word2Array[j-1] {
+                dp[i][j] = dp[i-1][j-1]
+            } else {
+                dp[i][j] = min(dp[i-1][j-1], dp[i][j-1], dp[i-1][j]) + 1
+            }
+        }
+    }
+    return dp.last?.last ?? -1
 }
 
 minDistance("horse", "ros") // 3
