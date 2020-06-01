@@ -33,6 +33,14 @@ Learning &amp; Solving Problems on LeetCode
 
 
 
+## Contributors
+
+* [Milan Panchal](https://github.com/milanpanchal)
+
+* [Chintan Patel](https://github.com/ChintanPatel22490)
+
+
+
 License
 ----
 
