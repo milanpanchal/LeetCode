@@ -39,9 +39,9 @@ func twoCitySchedCost(_ costs: [[Int]]) -> Int {
 
     let sortedCosts = costs.sorted { return ($0[0] - $0[1]) < $1[0] - $1[1] }
     var minCost = 0
-    let N = sortedCosts.count
-    for i in 0..<N/2 {
-        minCost += sortedCosts[i][0] + sortedCosts[i+N/2][1]
+    let N = sortedCosts.count/2
+    for i in 0..<N {
+        minCost += sortedCosts[i][0] + sortedCosts[i+N][1]
     }
     return minCost
 }
