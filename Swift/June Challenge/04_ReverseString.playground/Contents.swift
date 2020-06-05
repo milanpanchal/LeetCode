@@ -39,7 +39,8 @@ import UIKit
 
 func reverseString(_ s: inout [Character]) {
     
-    for i in 0..<s.count/2 {
+    let n = s.count>>1 //s.count/2
+    for i in 0..<n {
         (s[i], s[s.count-1-i]) = (s[s.count-1-i], s[i])
         // s.swapAt(i, s.count-1-i)
     }
