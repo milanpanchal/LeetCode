@@ -7,10 +7,10 @@ Learning &amp; Solving Problems on LeetCode
 | ------------------------------------------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
 | [Invert Binary Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/01_InvertBinaryTree.playground/Contents.swift) |                          |                           |                           |                           |
 | [Delete Node](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/02_DeleteNode.playground/Contents.swift) |                          |                           |                           |                           |
-|                                                              |                          |                           |                           |                           |
-|                                                              |                          |                           |                           |                           |
-|                                                              |                          |                           |                           |                           |
-|                                                              |                          |                           |                           |                           |
-|                                                              |                          |                           |                           |                           |
+| [Two City Scheduling](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/03_TwoCityScheduling.playground/Contents.swift) |                          |                           |                           |                           |
+| [Reverse String](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/04_ReverseString.playground/Contents.swift) |                          |                           |                           |                           |
+| [Random Pick With Weight](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/05_RandomPickWithWeight.playground/Contents.swift) |                          |                           |                           |                           |
+| [Queue Reconstruction By Height](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/06_QueueReconstructionByHeight.playground/Contents.swift) |                          |                           |                           |                           |
+| [Coin Change 2](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/07_CoinChange2.playground/Contents.swift) |                          |                           |                           |                           |
 
 
