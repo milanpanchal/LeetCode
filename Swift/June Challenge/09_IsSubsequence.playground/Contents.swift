@@ -35,5 +35,28 @@
 import UIKit
 
 func isSubsequence(_ s: String, _ t: String) -> Bool {
+
+    if t.count < s.count { return false }
+    if s.count == t.count { return s == t }
+    if s.count == 0 { return true }
+
+    let sArray = Array(s)
     
+    var count = 0
+    for chT in t {
+        if chT == sArray[count] {
+            if count + 1 == sArray.count {
+                return true
+            }
+            
+            count += 1
+        }
+    }
+
+    return false
 }
+
+isSubsequence("abc", "ahbgdc")  // true
+isSubsequence("axc", "ahbgdc")  // false
+isSubsequence("", "ahbgdc")     // true
+isSubsequence("acb", "ahbgdc")  // false
