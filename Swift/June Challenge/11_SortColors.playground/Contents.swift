@@ -31,6 +31,40 @@
 
 import UIKit
 
+func sortColors1(_ nums: inout [Int]) {
+    
+    for i in 0..<nums.count {
+        for j in i..<nums.count {
+            if nums[i] > nums[j] {
+                nums.swapAt(i, j)
+            }
+        }
+    }
+}
+
 func sortColors(_ nums: inout [Int]) {
     
+    var counts = Array(repeating: 0, count: 3)
+    
+    for i in 0..<nums.count {
+        counts[nums[i]] += 1
+    }
+
+    for index in 0..<nums.count {
+        if 0..<counts[0] ~= index {
+            nums[index] = 0 //counts[0]
+        } else if counts[0]..<counts[0]+counts[1] ~= index {
+            nums[index] = 1
+        } else {
+            nums[index] = 2
+        }
+        
+    }
 }
+var colors = [2,0,2,1,1,0]
+sortColors(&colors)
+print(colors)
+
+var colors2 = [2,0,1]
+sortColors(&colors2)
+print(colors2)
