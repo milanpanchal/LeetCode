@@ -45,31 +45,48 @@ import UIKit
 
 class RandomizedSet {
 
+    var hashMap:[Int:Bool]
+    
     /** Initialize your data structure here. */
     init() {
-        
+        hashMap = [:]
     }
     
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     func insert(_ val: Int) -> Bool {
-        
+        if hashMap[val] == nil {
+            hashMap[val] = true
+            return true
+        }
+        return false
     }
     
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     func remove(_ val: Int) -> Bool {
-        
+        if hashMap[val] != nil {
+            hashMap[val] = nil
+            return true
+        }
+        return false
     }
     
     /** Get a random element from the set. */
     func getRandom() -> Int {
-        
+        return hashMap.keys.randomElement() ?? 0
     }
 }
 
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * let obj = RandomizedSet()
- * let ret_1: Bool = obj.insert(val)
- * let ret_2: Bool = obj.remove(val)
- * let ret_3: Int = obj.getRandom()
- */
+
+// Your RandomizedSet object will be instantiated and called as such:
+let obj = RandomizedSet()
+//let ret_1: Bool = obj.insert(1) // true
+//let ret_2: Bool = obj.remove(2) // false
+//let ret_3: Bool = obj.insert(2) // true
+//let ret_4: Int = obj.getRandom() // 1 or 2
+//let ret_5: Bool = obj.remove(1) // true
+//let ret_6: Bool = obj.insert(2) // false
+let ret_7: Int = obj.getRandom() // 2
+
+
+["RandomizedSet","insert","remove","insert","getRandom","remove","insert","getRandom"]
+[[],[1],[2],[2],[],[1],[2],[]]
