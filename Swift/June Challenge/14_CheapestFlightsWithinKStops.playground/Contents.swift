@@ -55,6 +55,46 @@
 
 import UIKit
 
+//45 / 45 test cases passed.
+//Status: Accepted
+//Runtime: 112 ms
+//Memory Usage: 20.9 MB
+
 func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K: Int) -> Int {
     
+    // check If source == destination
+    if src == dst { return 0 }
+
+    // Mapping location
+    var locationMap: [Int: [(Int, Int)]] = [:]
+    for routeAndPrice in flights {
+        locationMap[routeAndPrice[0], default: []].append((routeAndPrice[1], routeAndPrice[2]))
+    }
+    print(locationMap)
+    
+    var queue = [(src, 0, 0)]
+    var weights = [src:0]
+    
+    while queue.count > 0 {
+        let node = queue.removeFirst()
+        let key = node.0
+        let w = node.1
+        let k = node.2
+
+        if k <= K, let locationsFromStop = locationMap[key] {
+            for loc in locationsFromStop {
+                let stopNo = loc.0
+                let weight = loc.1
+                if weights[stopNo] == nil || w+weight < weights[stopNo]! {
+                    weights[stopNo] = w+weight
+                    queue.append((stopNo, w+weight, k+1))
+                }
+            }
+        }
+    }
+    
+    return weights[dst] ?? -1
 }
+
+findCheapestPrice(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 1)
+findCheapestPrice(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 0)
