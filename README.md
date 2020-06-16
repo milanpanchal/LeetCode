@@ -9,7 +9,7 @@ Learning &amp; Solving Problems on LeetCode
 
 
 
-### [May Challenge](https://github.com/milanpanchal/LeetCode/tree/master/Swift/May%20Challenge) 
+### May Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/May%20Challenge)]
 
 | Week 1: May 1st–May 7th                                      | Week 2: May 8th–May 14th                                     | Week 3: May 15th–May 21st                                    | Week 4: May 22nd–May 28th                                    | Week 5: May 29th–May 31st                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -23,17 +23,18 @@ Learning &amp; Solving Problems on LeetCode
 
 
 
-### [June Challenge](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge) 
+### June Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge), [Python](https://github.com/milanpanchal/LeetCode/tree/master/Python/June%20Challenge), [CPP](https://github.com/milanpanchal/LeetCode/tree/master/CPP/June%20Challenge)]
 
-| Week 1: May 1st–May 7th                                      | Week 2: May 8th–May 14th | Week 3: May 15th–May 21st | Week 4: May 22nd–May 28th | Week 5: May 29th–May 31st |
-| ------------------------------------------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
-| [Invert Binary Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/01_InvertBinaryTree.playground/Contents.swift) |                          |                           |                           |                           |
-| [Delete Node](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/02_DeleteNode.playground/Contents.swift) |                          |                           |                           |                           |
-| [Two City Scheduling](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/03_TwoCityScheduling.playground/Contents.swift) |                          |                           |                           |                           |
-| [Reverse String](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/04_ReverseString.playground/Contents.swift) |                          |                           |                           |                           |
-| [Random Pick With Weight](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/05_RandomPickWithWeight.playground/Contents.swift) |                          |                           |                           |                           |
-| [Queue Reconstruction By Height](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/06_QueueReconstructionByHeight.playground/Contents.swift) |                          |                           |                           |                           |
-| [Coin Change 2](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/07_CoinChange2.playground/Contents.swift) |                          |                           |                           |                           |
+| Week 1: May 1st–May 7th                                      | Week 2: May 8th–May 14th                                     | Week 3: May 15th–May 21st                                    | Week 4: May 22nd–May 28th | Week 5: May 29th–May 31st |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ------------------------- |
+| [Invert Binary Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/01_InvertBinaryTree.playground/Contents.swift) | [Power of Two](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/08_PowerOfTwo.playground) | [Search in a Binary Search Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/15_SearchInABinarySearchTree.playground) |                           |                           |
+| [Delete Node](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/02_DeleteNode.playground/Contents.swift) | [Is Subsequence](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/09_IsSubsequence.playground) |                                                              |                           |                           |
+| [Two City Scheduling](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/03_TwoCityScheduling.playground/Contents.swift) | [Search Insert Position](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/10_SearchInsertPosition.playground) |                                                              |                           |                           |
+| [Reverse String](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/04_ReverseString.playground/Contents.swift) | [Sort Colors](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/11_SortColors.playground) |                                                              |                           |                           |
+| [Random Pick With Weight](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/05_RandomPickWithWeight.playground/Contents.swift) | [Insert Delete Get Random](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/12_InsertDeleteGetRandom.playground) |                                                              |                           |                           |
+| [Queue Reconstruction By Height](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/06_QueueReconstructionByHeight.playground/Contents.swift) | [Largest Divisible Subset](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/13_LargestDivisibleSubset.playground) |                                                              |                           |                           |
+| [Coin Change 2](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/07_CoinChange2.playground/Contents.swift) | [Cheapest Flights Within K Stops](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/14_CheapestFlightsWithinKStops.playground) |                                                              |                           |                           |
+
 
 
 
