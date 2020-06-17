@@ -39,5 +39,31 @@
 import UIKit
 
 func validIPAddress(_ IP: String) -> String {
+ 
+    let ipv4RegEx = "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+    if IP.range(of: ipv4RegEx, options: .regularExpression) != nil {
+        return "IPv4"
+    }
     
+    /*if NSPredicate(format:"SELF MATCHES %@", ipv4RegEx).evaluate(with: IP) {
+        return "IPv4"
+    }*/
+
+    let ipv6RegEx = "^(([0-9a-fA-F]{1,4})\\:){7}([0-9a-fA-F]{1,4})$"
+    if IP.range(of: ipv6RegEx, options: .regularExpression) != nil {
+        return "IPv6"
+    }
+
+    /*if NSPredicate(format:"SELF MATCHES %@", ipv6RegEx).evaluate(with: IP) {
+        return "IPv6"
+    }*/
+    
+    return "Neither"
 }
+
+validIPAddress("172.16.254.1") // IPv4
+validIPAddress("172.16.254.01") // Neither
+validIPAddress("2001:0db8:85a3:0000:0000:8a2e:0370:7334") // IPv6
+validIPAddress("2001:db8:85a3:0:0:8A2E:0370:7334") // IPv6
+validIPAddress("2001:0db8:85a3::8A2E:0370:7334") // Neither
+
