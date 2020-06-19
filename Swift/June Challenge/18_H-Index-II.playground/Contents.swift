@@ -36,6 +36,16 @@ import UIKit
 
 class Solution {
     func hIndex(_ citations: [Int]) -> Int {
-        
+
+        let totalPapers = citations.count
+        for i in 0..<totalPapers {
+            if citations[i] >= totalPapers - i {
+                return totalPapers - i
+            }
+        }
+        return 0
     }
 }
+
+let obj = Solution()
+obj.hIndex([0,1,3,5,6]) // 3
