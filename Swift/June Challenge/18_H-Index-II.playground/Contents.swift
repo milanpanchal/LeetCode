@@ -35,6 +35,14 @@
 import UIKit
 
 class Solution {
+    
+    /*
+      -> 84 / 84 test cases passed.
+      -> Status: Accepted
+      -> Runtime: 132 ms
+      -> Memory Usage: 22.2 MB
+    */
+    
     func hIndex(_ citations: [Int]) -> Int {
 
         let totalPapers = citations.count
@@ -45,7 +53,36 @@ class Solution {
         }
         return 0
     }
+    
+    /*
+    -> 84 / 84 test cases passed.
+    -> Status: Accepted
+    -> Runtime: 124 ms
+    -> Memory Usage: 22.2 MB
+    */
+
+    func hIndexRevised(_ citations: [Int]) -> Int {
+        let total = citations.count
+        
+        var left = 0, right = citations.count - 1
+        
+        while left <= right {
+            let middle =  (left + right) / 2
+            
+            let val = total - middle
+            if citations[middle] == val {
+                return val
+            } else if citations[middle] > val {
+                right = middle - 1
+            }else {
+                left = middle + 1
+            }
+        }
+        
+        return total - left
+    }
 }
 
 let obj = Solution()
 obj.hIndex([0,1,3,5,6]) // 3
+obj.hIndexRevised([0,1,3,5,6]) // 3
