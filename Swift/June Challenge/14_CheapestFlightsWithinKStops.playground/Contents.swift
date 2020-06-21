@@ -55,10 +55,10 @@
 
 import UIKit
 
-//45 / 45 test cases passed.
-//Status: Accepted
-//Runtime: 112 ms
-//Memory Usage: 20.9 MB
+// 45 / 45 test cases passed.
+// Status: Accepted
+// Runtime: 112 ms
+// Memory Usage: 20.9 MB
 
 func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K: Int) -> Int {
     
@@ -98,3 +98,38 @@ func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K
 
 findCheapestPrice(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 1)
 findCheapestPrice(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 0)
+
+
+// 64ms submission
+class Solution {
+    func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K: Int) -> Int {
+        var cheapestTrips = [Int](repeating: Int.max, count: n)
+        var connections = [Int: [(Int, Int)]]() // origin: (destination, price)
+        for flight in flights {
+            connections[flight[0], default: []].append((flight[1], flight[2]))
+        }
+        cheapestTrips[src] = 0
+        var queue = [src]
+        var stops = 0
+        while !queue.isEmpty && stops <= K {
+            var newQueue = [Int]()
+            var newTrips = [Int](repeating: Int.max, count: n)
+            for origin in queue {
+                for (destination, price) in connections[origin, default: []] {
+                    if newTrips[destination] > cheapestTrips[origin] + price {
+                        newTrips[destination] = cheapestTrips[origin] + price
+                    }
+                }
+            }
+            for i in 0 ..< n {
+                if newTrips[i] < cheapestTrips[i] {
+                    cheapestTrips[i] = newTrips[i]
+                    newQueue.append(i)
+                }
+            }
+            queue = newQueue
+            stops += 1
+        }
+        return cheapestTrips[dst] == Int.max ? -1 : cheapestTrips[dst]
+    }
+}
