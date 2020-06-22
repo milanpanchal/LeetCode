@@ -27,13 +27,34 @@
 import UIKit
 
 class Solution {
+    
+    //    11 / 11 test cases passed.
+    //    Status: Accepted
+    //    Runtime: 56 ms
+    //    Memory Usage: 21.5 MB
+    
     func singleNumber(_ nums: [Int]) -> Int {
         
-        return 0
+        var res = [Int:Int]()
+        
+        for n in nums {
+            res[n, default: 0] += 1
+        }
+        
+        for (k,v) in res {
+            if v == 1 { return k}
+        }
+        return -1
+    }
+    
+    func singleNumberHOF(_ nums: [Int]) -> Int {
+        let res = nums.reduce(into: [Int: Int]()) { $0[$1, default: 0] += 1 }
+        return res.first(where: { $0.value == 1 })?.key ?? -1
+        
     }
 }
 
 let sol = Solution()
 sol.singleNumber([2,2,3,2]) // 3
-sol.singleNumber([0,1,0,1,0,1,99]) // 99
+sol.singleNumberHOF([0,1,0,1,0,1,99]) // 99
 
