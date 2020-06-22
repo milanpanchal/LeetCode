@@ -43,6 +43,11 @@
 
 import UIKit
 
+// 45 / 45 test cases passed.
+// Status: Accepted
+// Runtime: 48 ms
+// Memory Usage: 21.2 MB
+
 class Solution {
     func calculateMinimumHP(_ dungeon: [[Int]]) -> Int {
         
