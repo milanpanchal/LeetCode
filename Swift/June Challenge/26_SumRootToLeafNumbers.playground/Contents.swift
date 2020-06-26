@@ -66,14 +66,49 @@ import UIKit
      }
  }
  
+// 110 / 110 test cases passed.
+// Status: Accepted
+// Runtime: 12 ms
+// Memory Usage: 21.5 MB
+
 class Solution {
     func sumNumbers(_ root: TreeNode?) -> Int {
-        guard let node = root else {
+        guard let root = root else {
             return 0
         }
         
+        var result = [Int]()
+        var current = [root.val]
+
+        dfs(root, &current, &result)
+
+        return result.reduce(0, +)
+    }
+    
+    func dfs(_ root: TreeNode?, _ currentArray: inout [Int], _ finalResult: inout [Int]) {
         
-        return 0
+        guard let root = root else {
+            return
+        }
+        
+        if currentArray.isEmpty { return }
+        let cur = currentArray.removeFirst()
+        
+        if let left = root.left {
+            currentArray.append(left.val + cur*10)
+            dfs(left, &currentArray, &finalResult)
+        }
+
+        if let right = root.right {
+            currentArray.append(right.val + cur*10)
+            dfs(right, &currentArray, &finalResult)
+        }
+
+        // Add current value to final result
+        if root.left == nil, root.right == nil {
+            finalResult.append(cur)
+        }
+        
     }
 }
 
@@ -83,3 +118,10 @@ root.right = TreeNode(3)
 
 let sol = Solution()
 sol.sumNumbers(root) // 25
+
+let root1 = TreeNode(4)
+root1.left = TreeNode(9)
+root1.right = TreeNode(0)
+root1.left?.left = TreeNode(5)
+root1.left?.right = TreeNode(1)
+sol.sumNumbers(root1) // 1026
