@@ -125,3 +125,23 @@ root1.right = TreeNode(0)
 root1.left?.left = TreeNode(5)
 root1.left?.right = TreeNode(1)
 sol.sumNumbers(root1) // 1026
+
+
+class SolutionRevised {
+    func sumNumbers(_ root: TreeNode?) -> Int {
+        return sum(root)
+    }
+    
+    func sum(_ root: TreeNode?, _ currSum: Int = 0) -> Int {
+        
+        guard let root = root else { return 0 }
+        
+        let curr = currSum * 10 + root.val
+        
+        if root.left == nil, root.right == nil {
+            return curr
+        }
+        
+        return sum(root.left, curr) + sum(root.right, curr)
+    }
+}

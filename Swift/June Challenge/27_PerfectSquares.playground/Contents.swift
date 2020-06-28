@@ -49,6 +49,31 @@ class Solution {
         }
         return dp[n]
     }
+    
+    // LeetCode Efficient Solution 
+    func numSquares1(_ n: Int) -> Int {
+          var n = n
+
+          while n.isMultiple(of: 4) { n /= 4 }
+          if n % 8 == 7 { return 4 }
+
+          let sqrt = Int(Double(n).squareRoot())
+          if n == sqrt * sqrt { return 1 }
+
+          var a = 1, b = sqrt
+          while a <= b {
+              switch a * a + b * b {
+              case ..<n:
+                  a += 1
+              case (n + 1)...:
+                  b -= 1
+              default:
+                  return 2
+              }
+          }
+
+          return 3
+      }
 }
 
 let sol = Solution()
