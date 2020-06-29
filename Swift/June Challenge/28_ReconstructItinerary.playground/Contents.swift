@@ -40,11 +40,47 @@
 
 import UIKit
 
+typealias StringArray = [String]
+
 class Solution {
+    
+    //    80 / 80 test cases passed.
+    //    Status: Accepted
+    //    Runtime: 152 ms
+    //    Memory Usage: 23.3 MB
+    
     func findItinerary(_ tickets: [[String]]) -> [String] {
         
+        // Generate Graph
+        var map = [String:[String]]()
+        for ticket in tickets {
+            map[ticket.first!, default: StringArray()].append(ticket.last!)
+        }
+        
+        // Sort the generated graph in lexical order
+        map.keys.forEach { (key) in
+            map[key] = map[key]?.sorted()
+        }
+        
+        return dfs(map, tickets.count + 1)
+    }
+    
+    func dfs(_ map: [String:[String]], _ count: Int, _ from: String = "JFK", _ itinerary: [String] = ["JFK"]) -> [String] {
+        
+        for (index,to) in map[from, default: StringArray()].enumerated(){
+            var map = map
+            map[from]!.remove(at: index)
+            let result = dfs(map, count, to, itinerary + [to])
+            if result.count == count {
+                return result
+            }
+        }
+        
+        return itinerary
     }
 }
 
 let sol = Solution()
-sol.findItinerary([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]])
+//sol.findItinerary([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]])
+//sol.findItinerary([["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]])
+sol.findItinerary([["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]) // ["JFK","NRT","JFK","KUL"]
