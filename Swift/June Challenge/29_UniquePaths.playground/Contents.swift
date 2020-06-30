@@ -49,12 +49,51 @@
 import UIKit
 
 class Solution {
+    
+    // 62 / 62 test cases passed.
+    // Status: Accepted
+    // Runtime: 12 ms
+    // Memory Usage: 20.4 MB
+    
     func uniquePaths(_ m: Int, _ n: Int) -> Int {
+        guard m > 0, n > 0 else {
+            return 0
+        }
+        var paths = [Int](repeating: 0, count: n)
+        paths[0] = 1
         
-        return 1
+        for _ in 0..<m {
+            for j in 1..<n {
+                paths[j] += paths[j-1]
+            }
+        }
+        // print(paths)
+        return paths[n-1]
     }
+    
+    //    62 / 62 test cases passed.
+    //    Status: Accepted
+    //    Runtime: 8 ms
+    //    Memory Usage: 20.5 MB
+
+    func uniquePaths2(_ m: Int, _ n: Int) -> Int {
+        var dp = [[Int]](repeating: [Int](repeating: 0, count: n), count: m)
+        
+        for rowIndex in 0..<m {
+            for columnIndex in 0..<n {
+                if rowIndex == 0 || columnIndex == 0 {
+                    dp[rowIndex][columnIndex] = 1
+                } else {
+                    dp[rowIndex][columnIndex] = dp[rowIndex - 1][columnIndex] + dp[rowIndex][columnIndex - 1]
+                }
+            }
+        }
+        // print(dp)
+        return dp.last?.last ?? 0
+    }
+
 }
 
 let sol = Solution()
 sol.uniquePaths(3, 2) // 3
-sol.uniquePaths(7, 3) // 28
+sol.uniquePaths2(7, 3) // 28
