@@ -7,15 +7,7 @@ Learning &amp; Solving Problems on LeetCode
 
 ![](https://github.com/milanpanchal/LeetCode/blob/master/Assets/LeetCodeLogo.png)
 
-
-
-# Table of Content
-
-* [May Challenge](#may-challenge)
-* [June Challenge](#june-challenge)
-* [July Challenge](#july-challenge)
-
-  
+[TOC]
 
 ### May Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/May%20Challenge)]
 
