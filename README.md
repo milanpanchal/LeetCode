@@ -35,6 +35,18 @@ Learning &amp; Solving Problems on LeetCode
 | [Queue Reconstruction By Height](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/06_QueueReconstructionByHeight.playground/Contents.swift) | [Largest Divisible Subset](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/13_LargestDivisibleSubset.playground/Contents.swift) | [Permutation Sequence](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/20_PermutationSequence.playground/Contents.swift) | [Perfect Squares](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/27_PerfectSquares.playground/Contents.swift) |                                                              |
 | [Coin Change 2](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/07_CoinChange2.playground/Contents.swift) | [Cheapest Flights Within K Stops](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/14_CheapestFlightsWithinKStops.playground/Contents.swift) | [Dungeon Game](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/21_DungeonGame.playground/Contents.swift) | [Reconstruct Itinerary](https://github.com/milanpanchal/LeetCode/tree/master/Swift/June%20Challenge/28_ReconstructItinerary.playground/Contents.swift) |                                                              |
 
+### July Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge)]
+
+| Week 1: May 1st–May 7th                                      | Week 2: May 8th–May 14th | Week 3: May 15th–May 21st | Week 4: May 22nd–May 28th | Week 5: May 29th–May 31st |
+| ------------------------------------------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
+| [Arranging Coins](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/01_ArrangingCoins.playground/Contents.swift) |                          |                           |                           |                           |
+| [Binary Tree Level Order Traversal-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/02_BinaryTreeLevelOrderTraversal-II.playground/Contents.swift) |                          |                           |                           |                           |
+| [Prison Cells After N Days](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/03_PrisonCellsAfterNDays.playground/Contents.swift) |                          |                           |                           |                           |
+| [Ugly Number-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/04_UglyNumberII.playground/Contents.swift) |                          |                           |                           |                           |
+| [Hamming Distance](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/05_HammingDistance.playground/Contents.swift) |                          |                           |                           |                           |
+| [Plus One](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/06_PlusOne.playground/Contents.swift) |                          |                           |                           |                           |
+| [Island Perimeter](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/07_IslandPerimeter.playground/Contents.swift) |                          |                           |                           |                           |
+
 
 
 ## Author
