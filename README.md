@@ -9,6 +9,14 @@ Learning &amp; Solving Problems on LeetCode
 
 
 
+# Table of Content
+
+* [May Challenge](#may-challenge)
+* [June Challenge](#june-challenge)
+* [July Challenge](#july-challenge)
+
+  
+
 ### May Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/May%20Challenge)]
 
 | Week 1: May 1st–May 7th                                      | Week 2: May 8th–May 14th                                     | Week 3: May 15th–May 21st                                    | Week 4: May 22nd–May 28th                                    | Week 5: May 29th–May 31st                                    |
