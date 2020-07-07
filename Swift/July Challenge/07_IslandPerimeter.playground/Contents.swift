@@ -33,10 +33,43 @@
 import UIKit
 
 class Solution {
+    
+    //    5833 / 5833 test cases passed.
+    //    Status: Accepted
+    //    Runtime: 616 ms
+    //    Memory Usage: 20.9 MB
+    
     func islandPerimeter(_ grid: [[Int]]) -> Int {
-        return 0
+        
+        if grid.count == 0 || grid[0].count == 0 {
+            return 0
+        }
+        
+        let rows = grid.count
+        let columns = grid[0].count
+        var perimeter = 0
+        
+        for row in 0..<rows {
+            for col in 0..<columns {
+                
+                if grid[row][col] == 1 {
+                    
+                    perimeter += 4
+                    
+                    if row > 0 && grid[row-1][col] == 1 {
+                        perimeter -= 2
+                    }
+                    
+                    if col > 0 && grid[row][col-1] == 1 {
+                        perimeter -= 2
+                    }
+                    
+                }
+            }
+        }
+        return perimeter
     }
 }
 
 let sol = Solution()
-sol.islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]])
+sol.islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]) // 16
