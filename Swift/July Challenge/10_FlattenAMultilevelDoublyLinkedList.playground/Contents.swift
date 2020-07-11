@@ -119,11 +119,53 @@ node3.child = node7
 node8.child = node11
 
 
+// 22 / 22 test cases passed.
+// Status: Accepted
+// Runtime: 24 ms
+// Memory Usage: 21.7 MB
+
 class Solution {
     func flatten(_ head: Node?) -> Node? {
+        
+        guard let head = head else {
+            return nil
+        }
+
+        var nodeStack = [Node]()
+        var current = head
+
+        while true {
+            if let child = current.child {
+                if let next = current.next {
+                    nodeStack.append(next)
+                }
+
+                current.next = child
+                child.prev = current
+                current.child = nil
+
+                current = child
+            } else if let next = current.next {
+                current = next
+            } else if let lastVal = nodeStack.popLast() {
+                current.next = lastVal
+                lastVal.prev = current
+
+                current = lastVal
+            } else {
+                break
+            }
+        }
+
         return head
     }
+
 }
 
 let sol = Solution()
-sol.flatten(node1)
+var result = sol.flatten(node1)
+
+while result != nil {
+    print(result!.val)
+    result = result?.next
+}
