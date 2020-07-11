@@ -96,10 +96,39 @@ public class TreeNode {
     }
 }
 
+//108 / 108 test cases passed.
+//Status: Accepted
+//Runtime: 28 ms
+//Memory Usage: 21.2 MB
+
 class Solution {
     func widthOfBinaryTree(_ root: TreeNode?) -> Int {
        
-        return 1
+        guard let root = root else {
+            return 0
+        }
+
+        var queue: [(node: TreeNode, val: Int)] = [(root, 1)]
+        var maxWidth = 1
+
+        while !queue.isEmpty {
+            for _ in 0..<queue.count {
+                let curr = queue.removeFirst()
+                
+                if let left = curr.node.left {
+                    queue.append((left, curr.val * 2))
+                }
+
+                if let right = curr.node.right {
+                    queue.append((right, curr.val * 2 + 1))
+                }
+            }
+            if !queue.isEmpty {
+                maxWidth = max(maxWidth, queue.last!.val - queue.first!.val + 1)
+            }
+        }
+        
+        return maxWidth
     }
 }
 
@@ -110,3 +139,39 @@ node.left?.right = TreeNode(3)
 
 let sol = Solution()
 sol.widthOfBinaryTree(node) // 2 (5,3)
+
+class Solution1 {
+    func widthOfBinaryTree(_ root: TreeNode?) -> Int {
+        guard let root = root else { return 0 }
+        
+        var maxWidth = 0
+        var queue: [(node: TreeNode, index: Int)] = []
+        queue.append((node: root, index: 0))
+        
+        while !queue.isEmpty {
+            let size = queue.count
+            let first = queue.first!
+            let last = queue.last!
+            
+            let currentWidth = last.index - first.index + 1
+            
+            if currentWidth > maxWidth {
+                maxWidth = currentWidth
+            }
+            
+            for _ in 0..<size {
+                let tuple = queue.removeFirst()
+                
+                if let left = tuple.node.left {
+                    queue.append((node: left, index: tuple.index * 2-1))
+                }
+                
+                if let right = tuple.node.right {
+                    queue.append((node: right, index: tuple.index * 2))
+                }
+            }
+        }
+        
+        return maxWidth
+    }
+}
