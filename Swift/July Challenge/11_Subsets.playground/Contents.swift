@@ -32,10 +32,35 @@
 
 import UIKit
 
+// 10 / 10 test cases passed.
+// Status: Accepted
+// Runtime: 24 ms
+// Memory Usage: 21 MB
+
+extension Collection {
+  public var powerSet: [[Element]] {
+    guard let fisrt = self.first else {return [[]]}
+    return self.dropFirst().powerSet.flatMap{[$0, [fisrt] + $0]}
+  }
+}
+
 class Solution {
     func subsets(_ nums: [Int]) -> [[Int]] {
-        
+        return nums.powerSet
     }
+    
+    //    10 / 10 test cases passed.
+    //    Status: Accepted
+    //    Runtime: 16 ms
+    //    Memory Usage: 21.5 MB
+
+    func subsets2(_ nums: [Int]) -> [[Int]] {
+        return nums.reduce([[]]) { result, num in
+                result + result.map{ $0 + [num]
+            }
+        }
+    }
+    
 }
 
 let sol = Solution()
