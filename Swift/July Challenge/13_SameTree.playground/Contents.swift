@@ -60,19 +60,45 @@ public class TreeNode {
 import UIKit
 
 class Solution {
+    
+//    57 / 57 test cases passed.
+//    Status: Accepted
+//    Runtime: 16 ms
+//    Memory Usage: 21.1 MB
+
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if p == nil, q == nil {
+            return true
+        }
         
-        return true
+        if p?.val == q?.val,
+            isSameTree(p?.left, q?.left),
+            isSameTree( p?.right, q?.right) {
+            return true
+        }
+        return false
+    }
+    
+//    57 / 57 test cases passed.
+//    Status: Accepted
+//    Runtime: 12 ms
+//    Memory Usage: 20.6 MB
+
+    func isSameTree2(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if p == nil, q == nil { return true }
+        if p == nil || q == nil { return false }
+        if p!.val != q!.val { return false }
+        return isSameTree(p!.left, q!.left) && isSameTree(p!.right, q!.right)
     }
 }
 
 let p = TreeNode(1)
 p.left = TreeNode(2)
-p.right = TreeNode(3)
+p.right = TreeNode(1)
 
 let q = TreeNode(1)
-q.left = TreeNode(2)
-q.right = TreeNode(3)
+q.left = TreeNode(1)
+q.right = TreeNode(2)
 
 
 let sol = Solution()
