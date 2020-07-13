@@ -41,10 +41,28 @@
 import UIKit
 
 class Solution {
+    
+//    600 / 600 test cases passed.
+//    Status: Accepted
+//    Runtime: 20 ms
+//    Memory Usage: 20 MB
+
     func reverseBits(_ n: Int) -> Int {
+        var n = n
+        var revBits = 0
         
+        for i in 0..<32 {
+            revBits += (n & 1)
+            n >>= 1
+            if i < 31 {
+                revBits <<= 1
+            }
+        }
+        
+        return revBits
     }
 }
 
 let sol = Solution()
-sol.reverseBits(00000010100101000001111010011100)
+sol.reverseBits(43261596) // 964176192
+sol.reverseBits(4294967293) // 3221225471
