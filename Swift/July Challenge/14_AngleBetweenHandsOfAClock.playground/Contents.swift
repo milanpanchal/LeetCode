@@ -42,8 +42,17 @@
 import UIKit
 
 class Solution {
+//    105 / 105 test cases passed.
+//    Status: Accepted
+//    Runtime: 12 ms
+//    Memory Usage: 20.8 MB
+
     func angleClock(_ hour: Int, _ minutes: Int) -> Double {
-        
+        let hoursAngle = (Double(hour % 12) + Double(minutes) / 60) * 30
+        let minutesAngle = Double(minutes*6)
+        let angle = abs(hoursAngle - minutesAngle)
+        if angle > 180 { return 360 - angle }
+        return angle
     }
 }
 
