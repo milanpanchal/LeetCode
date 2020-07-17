@@ -29,12 +29,72 @@
 import UIKit
 
 class Solution {
+    
+//    21 / 21 test cases passed.
+//    Status: Accepted
+//    Runtime: 156 ms
+//    Memory Usage: 22.1 MB
+
     func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
-     
-        return []
+       
+        if nums.isEmpty {
+            return []
+        }
+        
+        var hashMap = [Int:Int]()
+        for n in nums {
+            hashMap[n, default:0] += 1
+        }
+        
+        var result = [(Int, Int)]()
+        for (key, val) in hashMap {
+            result.append((key,val))
+        }
+        result.sort { (a, b) -> Bool in
+            return a.1 > b.1
+        }
+        
+        var ans = [Int]()
+        
+        for i in 0..<k {
+            ans.append(result[i].0)
+        }
+        return ans
+    }
+    
+    func topKFrequent2(_ nums: [Int], _ k: Int) -> [Int] {
+        if nums.isEmpty {
+            return []
+        }
+        
+        var freqDict = [Int: Int]()
+        var bucket = [Int: [Int]]()
+        
+        for num in nums {
+            freqDict[num, default: 0] += 1
+        }
+
+        for (num, freq) in freqDict {
+            bucket[freq, default: []].append(num)
+        }
+
+        var res = [Int]()
+        var n = nums.count
+        
+        while res.count < k {
+            if let vals = bucket[n] {
+                for val in vals {
+                    res.append(val)
+                }
+            }
+            
+            n -= 1
+        }
+        
+        return res
     }
 }
 
 let sol = Solution()
-sol.topKFrequent([1,1,1,2,2,3], 2) // [1, 2]
+sol.topKFrequent([1,1,1,2,2,3, 4], 2) // [1, 2]
 sol.topKFrequent([1], 1) // [1]
