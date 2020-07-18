@@ -40,9 +40,54 @@
 import UIKit
 
 class Solution {
+    
+
+//    110 / 110 test cases passed.
+//    Status: Accepted
+//    Runtime: 32 ms
+//    Memory Usage: 25.6 MB
+
     func reformatDate(_ date: String) -> String {
-     
+        let date = date
+            .replacingOccurrences(of: "st", with: "")
+            .replacingOccurrences(of: "nd", with: "")
+            .replacingOccurrences(of: "rd", with: "")
+            .replacingOccurrences(of: "th", with: "")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        if let dateInDate = dateFormatter.date(from: date) {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.string(from: dateInDate)
+        }
+
+        
         return ""
+    }
+    
+    func reformatDate3(_ date: String) -> String {
+        let splited: [String] = date.split(separator: " ").map{ String($0) }
+        let monthMap = ["Jan": "01",
+                        "Feb": "02",
+                        "Mar": "03",
+                        "Apr": "04",
+                        "May": "05",
+                        "Jun": "06",
+                        "Jul": "07",
+                        "Aug": "08",
+                        "Sep": "09",
+                        "Oct": "10",
+                        "Nov": "11",
+                        "Dec": "12"]
+        
+        var first = splited[0]
+        first.removeLast(2)
+        
+        if first.count == 1 {
+            first = "0" + first
+        }
+        return "\(splited[2])-\(monthMap[splited[1]]!)-\(first)"
     }
 }
 
@@ -50,4 +95,5 @@ let sol = Solution()
 sol.reformatDate("20th Oct 2052")   // 2052-10-20
 sol.reformatDate("6th Jun 1933")    // 1933-06-06
 sol.reformatDate("26th May 1960")   // 1960-05-26
+sol.reformatDate("1st May 1960")   // 1960-05-26
 
