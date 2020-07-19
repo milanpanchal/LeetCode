@@ -42,11 +42,85 @@
 
 import UIKit
 
+// Using Depth First Search Algo
 class Solution {
+   
+    func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
+        var stack:[Int] = []
+        var graph:[[Int]] = Array(repeating: [], count: numCourses)
+        var visited:[Int] = Array(repeating: 0, count: numCourses)
+
+        for subArray in prerequisites {
+            graph[subArray[0]].append(subArray[1])
+        }
+        // print(graph)
+        
+        for i in 0..<numCourses {
+            if dfs(graph, visited: &visited, i, &stack) {
+                return []
+            }
+        }
+        
+        return stack
+    }
+    
+    private func dfs(_ graph: [[Int]], visited: inout[Int], _ course: Int, _ stack: inout[Int]) -> Bool {
+        
+        if visited[course] == 2 { return false } // already visited
+        if visited[course] == 1 { return true } // cycle detection
+        visited[course] = 1
+        
+        for i in 0..<graph[course].count {
+            if dfs(graph, visited: &visited, graph[course][i], &stack) {
+                return true
+            }
+        }
+        
+        stack.append(course)
+        visited[course] = 2
+        
+        return false
+    }
+}
+
+// Using Node Indegree
+class Solution2 {
     func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
         
+        var prerequisitesCountArr = Array(repeating: 0, count: numCourses)
+        var array = Array(repeating: [Int](), count: numCourses)
+        
+        for course in prerequisites {
+            array[course[1]].append(course[0])
+            prerequisitesCountArr[course[0]] += 1
+        }
+        
+        var tempStack = [Int]()
+        var result = [Int]()
+        
+        // Get all the courses whose in-degree = 0
+        for i in 0..<numCourses where prerequisitesCountArr[i] == 0 {
+            tempStack.append(i)
+        }
+
+        while !tempStack.isEmpty {
+            let lastCourse = tempStack.popLast()!
+            result.append(lastCourse)
+            
+            // Decrease in-degree by 1 and add in to stack if its reach to 0
+            for course in array[lastCourse] {
+                prerequisitesCountArr[course] -= 1
+                if prerequisitesCountArr[course] == 0 {
+                    tempStack.append(course)
+                }
+                
+            }
+        }
+        
+        return result.count == numCourses ? result : [Int]()
     }
 }
 
 let sol = Solution()
-
+sol.findOrder(2, [[1,0]]) // [0,1]
+sol.findOrder(4, [[1,0],[2,0],[3,1],[3,2]]) // [0,1,2,3] or [0,2,1,3]
