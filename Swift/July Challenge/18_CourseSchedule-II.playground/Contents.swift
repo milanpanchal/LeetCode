@@ -45,6 +45,11 @@ import UIKit
 // Using Depth First Search Algo
 class Solution {
    
+//    44 / 44 test cases passed.
+//    Status: Accepted
+//    Runtime: 148 ms
+//    Memory Usage: 22.1 MB
+
     func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
         var stack:[Int] = []
         var graph:[[Int]] = Array(repeating: [], count: numCourses)
@@ -85,33 +90,39 @@ class Solution {
 
 // Using Node Indegree
 class Solution2 {
+    
+//    44 / 44 test cases passed.
+//    Status: Accepted
+//    Runtime: 192 ms
+//    Memory Usage: 21 MB
+
     func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
         
-        var prerequisitesCountArr = Array(repeating: 0, count: numCourses)
+        var inDegreeNodeCount = Array(repeating: 0, count: numCourses)
         var array = Array(repeating: [Int](), count: numCourses)
         
         for course in prerequisites {
             array[course[1]].append(course[0])
-            prerequisitesCountArr[course[0]] += 1
+            inDegreeNodeCount[course[0]] += 1
         }
         
-        var tempStack = [Int]()
+        var queue = [Int]()
         var result = [Int]()
         
         // Get all the courses whose in-degree = 0
-        for i in 0..<numCourses where prerequisitesCountArr[i] == 0 {
-            tempStack.append(i)
+        for i in 0..<numCourses where inDegreeNodeCount[i] == 0 {
+            queue.append(i)
         }
 
-        while !tempStack.isEmpty {
-            let lastCourse = tempStack.popLast()!
-            result.append(lastCourse)
+        while !queue.isEmpty {
+            let removedCourse = queue.removeFirst()
+            result.append(removedCourse)
             
             // Decrease in-degree by 1 and add in to stack if its reach to 0
-            for course in array[lastCourse] {
-                prerequisitesCountArr[course] -= 1
-                if prerequisitesCountArr[course] == 0 {
-                    tempStack.append(course)
+            for course in array[removedCourse] {
+                inDegreeNodeCount[course] -= 1
+                if inDegreeNodeCount[course] == 0 {
+                    queue.append(course)
                 }
                 
             }
@@ -121,6 +132,6 @@ class Solution2 {
     }
 }
 
-let sol = Solution()
+let sol = Solution2()
 sol.findOrder(2, [[1,0]]) // [0,1]
 sol.findOrder(4, [[1,0],[2,0],[3,1],[3,2]]) // [0,1,2,3] or [0,2,1,3]
