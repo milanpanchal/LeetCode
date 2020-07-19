@@ -34,7 +34,7 @@ Learning &amp; Solving Problems on LeetCode
 
 * [35_SearchInsertPosition](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/35_SearchInsertPosition.playground/Contents.swift)
 
-* [50_Pow(x, n)](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/50_Pow(x%2C n).playground/Contents.swift)
+* [50_Pow(x, n)](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/50_Pow(x%2C%20n).playground/Contents.swift)
 
 * [53_MaximumSubarray](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/53_MaximumSubarray.playground/Contents.swift)
 
