@@ -31,10 +31,63 @@ public class ListNode {
 }
 
 class Solution {
+    
+//    65 / 65 test cases passed.
+//    Status: Accepted
+//    Runtime: 88 ms
+//    Memory Usage: 22.6 MB
+
     func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
         
+        if head == nil {
+            return nil
+        }
+        
+        var node = head
+
+        while node?.next != nil {
+            if node?.next?.val == val {
+                node?.next = node?.next?.next
+            } else {
+                node = node?.next
+            }
+        }
+        
+        return head!.val == val ? head!.next : head!
+    }
+    
+    func removeElements2(_ head: ListNode?, _ val: Int) -> ListNode? {
+        var tmp = ListNode(-1, head), vHead = tmp
+        
+        while let next = tmp.next {
+            if next.val == val {
+                tmp.next = next.next
+            } else {
+                tmp = next
+            }
+        }
+        return vHead.next
+    }
+    
+    func printList(_ head: ListNode?) {
+        var head = head
+        while head != nil {
+            print(head!.val)
+            head = head?.next
+        }
     }
 }
 
+
+let head = ListNode(1)
+head.next = ListNode(2)
+head.next?.next = ListNode(3)
+head.next?.next?.next = ListNode(6)
+head.next?.next?.next?.next = ListNode(4)
+head.next?.next?.next?.next?.next = ListNode(5)
+head.next?.next?.next?.next?.next?.next = ListNode(6)
+
 let sol = Solution()
+let result = sol.removeElements(head, 6)
+sol.printList(result)
 
