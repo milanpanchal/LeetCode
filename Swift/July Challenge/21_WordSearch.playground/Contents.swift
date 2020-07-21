@@ -39,9 +39,57 @@
 import UIKit
 
 class Solution {
+    
+
+//    89 / 89 test cases passed.
+//    Status: Accepted
+//    Runtime: 920 ms
+//    Memory Usage: 22 MB
+
     func exist(_ board: [[Character]], _ word: String) -> Bool {
+        if word.count == 0 {
+            return true
+        }
+        
+        
+        let rows = board.count
+        let columns = board.first?.count ?? 0
+        var board = board
+        
+        for i in 0..<rows {
+            for j in 0..<columns {
+                
+                if board[i][j] == word.first!,
+                    dfs(&board, i, j, 0, word){
+                    return true
+                }
+            }
+        }
         
         return false
+    }
+    
+    
+    private func dfs(_ board: inout [[Character]], _ i: Int, _ j: Int, _ count: Int, _ word: String) -> Bool {
+        if count == word.count {
+            return true
+        }
+        
+        let charAtIndex = word.index(word.startIndex, offsetBy: count)
+        let char = Character(String(word[charAtIndex]))
+        if i < 0 || i >= board.count || j < 0 || j >= board[i].count || board[i][j] != char {
+            return false
+        }
+        
+        let temp = board[i][j]
+        board[i][j] = " "
+        let wordFound = dfs(&board, i+1, j, count + 1, word) ||
+                        dfs(&board, i-1, j, count + 1, word) ||
+                        dfs(&board, i, j+1, count + 1, word) ||
+                        dfs(&board, i, j-1, count + 1, word)
+        
+        board[i][j] = temp
+        return wordFound
     }
 }
 
