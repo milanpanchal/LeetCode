@@ -38,6 +38,12 @@
 
 import UIKit
 
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
+
 class Solution {
     
 
@@ -52,12 +58,10 @@ class Solution {
         }
         
         
-        let rows = board.count
-        let columns = board.first?.count ?? 0
         var board = board
         
-        for i in 0..<rows {
-            for j in 0..<columns {
+        for i in 0..<board.count {
+            for j in 0..<board[i].count {
                 
                 if board[i][j] == word.first!,
                     dfs(&board, i, j, 0, word){
@@ -75,14 +79,12 @@ class Solution {
             return true
         }
         
-        let charAtIndex = word.index(word.startIndex, offsetBy: count)
-        let char = Character(String(word[charAtIndex]))
-        if i < 0 || i >= board.count || j < 0 || j >= board[i].count || board[i][j] != char {
+        if i < 0 || i >= board.count || j < 0 || j >= board[i].count || board[i][j] != word[count] {
             return false
         }
         
         let temp = board[i][j]
-        board[i][j] = " "
+        board[i][j] = "#"
         let wordFound = dfs(&board, i+1, j, count + 1, word) ||
                         dfs(&board, i-1, j, count + 1, word) ||
                         dfs(&board, i, j+1, count + 1, word) ||
