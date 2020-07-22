@@ -1,6 +1,7 @@
 /*:
 # Binary Tree Zigzag Level Order Traversal
-  https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3398/
+  
+ https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 
  ---
 
@@ -125,4 +126,5 @@ node.right?.right = TreeNode(7)
 
 let sol = Solution()
 sol.zigzagLevelOrder(node) // [[3],[20,9],[15,7]]
+
 
