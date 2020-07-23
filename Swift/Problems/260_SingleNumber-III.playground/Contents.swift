@@ -1,6 +1,6 @@
 /*:
-# Single Number III
-  https://leetcode.com/explore/challenge/card/july-leetcoding-challenge/547/week-4-july-22nd-july-28th/3399/
+# 260. Single Number III
+  https://leetcode.com/problems/single-number-iii/
 
  ---
 
@@ -69,3 +69,4 @@ class Solution {
 
 let sol = Solution()
 sol.singleNumber([1,2,1,3,2,5]) // [3,5]
+
