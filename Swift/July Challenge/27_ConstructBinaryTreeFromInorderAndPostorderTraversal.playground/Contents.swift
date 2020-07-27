@@ -50,9 +50,47 @@ public class TreeNode {
 }
 
 
+// 203 / 203 test cases passed.
+// Status: Accepted
+// Runtime: 24 ms
+// Memory Usage: 22.2 MB
+
 class Solution {
+    
+    var current: Int = 0
+
     func buildTree(_ inorder: [Int], _ postorder: [Int]) -> TreeNode? {
-        return TreeNode()
+        
+        guard inorder.count == postorder.count, inorder.count > 0 else {
+            return nil
+        }
+        
+        current = postorder.count-1
+        var inorderMap = [Int: Int]()
+        for (idx, val) in inorder.enumerated() {
+            inorderMap[val] = idx
+        }
+        
+        return buildTreePSTIN(inorderMap, postorder, 0, postorder.count-1)
+
+    }
+    
+    private func buildTreePSTIN(_ inorderMap: [Int: Int], _ postorder: [Int], _ start: Int, _ end: Int) -> TreeNode? {
+        
+        if start > end || current < 0 {
+            return nil
+        }
+        
+        let value = postorder[current]
+        let node = TreeNode(value)
+        let index = inorderMap[value] ?? 0
+        
+        current -= 1
+        
+        node.right = buildTreePSTIN(inorderMap, postorder, index+1, end)
+        node.left = buildTreePSTIN(inorderMap, postorder, start, index-1)
+        
+        return node
     }
 }
 
