@@ -73,9 +73,27 @@ class Solution {
         
         return nums[left]
     }
+    
+    func findMin2(_ nums: [Int]) -> Int {
+        guard nums.count > 0 else{
+            return -1
+        }
+        
+        let nums  = nums + [nums[0]]
+        var prev = nums[0]
+        for i in 1..<nums.count {
+            if prev > nums[i] {
+                return nums[i]
+            }
+            prev = nums[i]
+        }
+        
+        return prev
+    }
 }
 
 let sol = Solution()
 sol.findMin([1,3,5]) // 1
 sol.findMin1([2,2,2,0,1]) // 0
+sol.findMin2([2,2,2,0,1]) // 0
 
