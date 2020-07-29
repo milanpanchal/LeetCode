@@ -12,8 +12,6 @@
 
  You need to return the least number of units of times that the CPU will take to finish all the given tasks.
 
-
-
 ### Example 1:
 
  ```
@@ -62,10 +60,71 @@
 
 import UIKit
 
+/*
+ 
+  Explanation
+  ["A","A","A","B","B","B"]
+  n = 2
+  map = [A: 3, B: 3]
+  m = 3
+  numsOfMax = 2
+  
+ Final result
+    = number of intervals * size of each interval + number of elements with maximum frequency items.
+    = (m - 1) * (n + 1) + numsOfMax
+    = 2 * 3 + 2
+    = 6 + 2
+    = 8
+ 
+ */
 class Solution {
+    
+//    69 / 69 test cases passed.
+//    Status: Accepted
+//    Runtime: 1060 ms
+//    Memory Usage: 22.7 MB
+
     func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
         
-        return 1
+        //Create a map with frequency of tasks/characters
+        var map: [Character: Int] = [:]
+        for task in tasks {
+            map[task, default: 0] += 1
+        }
+        
+        // Number of Intervals is decided by most frequent element in dic.
+        let m = map.values.max()!
+        
+        // Count elements with maximum frequency in dic.
+        let numsOfMax = map.values.filter({ $0 == m }).count
+        
+        // number of intervals = m - 1 => between the 3 As we had to place 2 intervals => m - 1
+        let numsOfIntervals = m - 1
+        
+        // Final result = number of intervals * size of each interval + number of elements with maximum frequency items.
+        return max(tasks.count, numsOfIntervals * (n + 1) + numsOfMax)
+        
+    }
+    
+    func leastInterval2(_ tasks: [Character], _ n: Int) -> Int {
+        var map = Array(repeating: 0, count: 26)
+        let AValue = Character("A").asciiValue!
+        for char in tasks {
+            let index = Int(char.asciiValue! - AValue)
+            map[index] += 1
+        }
+        
+        let sorted = map.sorted(by: >)
+        
+        let maxCount = sorted[0] - 1
+        var maxBlank = maxCount * n
+        
+        for i in 1..<26 {
+            maxBlank -= min(maxCount, sorted[i])
+        }
+        
+        maxBlank = max(maxBlank, 0)
+        return tasks.count + maxBlank
     }
 }
 
