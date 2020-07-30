@@ -55,10 +55,37 @@
 
 import UIKit
 
+// 36 / 36 test cases passed.
+// Status: Accepted
+// Runtime: 48 ms
+// Memory Usage: 21.3 MB
+
 class Solution {
-    func wordBreak(_ s: String, _ wordDict: [String]) -> [String] {
- 
-        return [String]()
+    
+    var result = [String: [String]]()
+    
+    func wordBreak(_ str: String, _ wordDict: [String]) -> [String] {
+        
+        if let ans = result[str] {
+            return ans
+        }
+        
+        var ans = [String]()
+        
+        for word in wordDict where str.hasPrefix(word) {
+            if str.count == word.count {
+                ans.append(word)
+            } else {
+                let substr = String(str[word.endIndex...])
+                let subwords = wordBreak(substr, wordDict)
+                for substr in subwords {
+                    ans.append("\(word) \(substr)")
+                }
+            }
+        }
+
+        result[str] = ans
+        return ans
     }
 }
 
