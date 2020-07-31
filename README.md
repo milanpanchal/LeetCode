@@ -47,9 +47,13 @@ Learning &amp; Solving Problems on LeetCode
 
 * [69_Sqrt(x)](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/69_Sqrt(x).playground/Contents.swift)
 
+* [70_ClimbingStairs](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/70_ClimbingStairs.playground/Contents.swift)
+
 * [73_SetMatrixZeroes](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/73_SetMatrixZeroes.playground/Contents.swift)
 
 * [78_Subsets](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/78_Subsets.playground/Contents.swift)
+
+* [79_WordSearch](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/79_WordSearch.playground/Contents.swift)
 
 * [96_UniqueBinarySearchTrees](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/96_UniqueBinarySearchTrees.playground/Contents.swift)
 
@@ -57,17 +61,25 @@ Learning &amp; Solving Problems on LeetCode
 
 * [103_BinaryTreeZigzagLevelOrderTraversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/103_BinaryTreeZigzagLevelOrderTraversal.playground/Contents.swift)
 
+* [106_ConstructBinaryTreeFromInorderAndPostorderTraversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/106_ConstructBinaryTreeFromInorderAndPostorderTraversal.playground/Contents.swift)
+
 * [107_BinaryTreeLevelOrderTraversal-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/107_BinaryTreeLevelOrderTraversal-II.playground/Contents.swift)
 
 * [136_SingleNumber.playground](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/136_SingleNumber.playground)
 
 * [137_SingleNumber-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/137_SingleNumber-II.playground/Contents.swift)
 
+* [140_WordBreak-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/140_WordBreak-II.playground/Contents.swift)
+
 * [151_ReverseWordsInAString](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/151_ReverseWordsInAString.playground/Contents.swift)
+
+* [154_FindMinimumInRotatedSortedArray-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/154_FindMinimumInRotatedSortedArray-II.playground/Contents.swift)
 
 * [174_DungeonGame](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/174_DungeonGame.playground/Contents.swift)
 
 * [190_ReverseBits](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/190_ReverseBits.playground/Contents.swift)
+
+* [203_RemoveLinkedListElements](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/203_RemoveLinkedListElements.playground/Contents.swift)
 
 * [206_ReverseLinkedList](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/206_ReverseLinkedList.playground/Contents.swift)
 
@@ -77,11 +89,17 @@ Learning &amp; Solving Problems on LeetCode
 
 * [222_CountCompleteTreeNodes](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/222_CountCompleteTreeNodes.playground/Contents.swift)
 
+* [258_AddDigits](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/258_AddDigits.playground/Contents.swift)
+
+* [260_SingleNumber-III](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/260_SingleNumber-III.playground/Contents.swift)
+
 * [264_UglyNumber-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/264_UglyNumber-II.playground/Contents.swift)
 
 * [287_FindTheDuplicateNumber](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/287_FindTheDuplicateNumber.playground/Contents.swift)
 
 * [289_GameOfLife](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/289_GameOfLife.playground/Contents.swift)
+
+* [309_BestTimeToBuyAndSellStockWithCooldown](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/309_BestTimeToBuyAndSellStockWithCooldown.playground/Contents.swift)
 
 * [345_ReverseVowelsOfAString](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/345_ReverseVowelsOfAString.playground/Contents.swift)
 
@@ -101,9 +119,13 @@ Learning &amp; Solving Problems on LeetCode
 
 * [518_CoinChange2](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/518_CoinChange2.playground/Contents.swift)
 
+* [621_TaskScheduler](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/621_TaskScheduler.playground/Contents.swift)
+
 * [662_MaximumWidthOfBinaryTree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/662_MaximumWidthOfBinaryTree.playground/Contents.swift)
 
 * [709_ToLowerCase](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/709_ToLowerCase.playground/Contents.swift)
+
+* [797_AllPathsFromSourceToTarget](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/797_AllPathsFromSourceToTarget.playground/Contents.swift)
 
 * [917_ReverseOnlyLetters](https://github.com/milanpanchal/LeetCode/tree/master/Swift/Problems/917_ReverseOnlyLetters.playground/Contents.swift)
 
@@ -151,15 +173,15 @@ Learning &amp; Solving Problems on LeetCode
 
 ### July Challenge [[Swift](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge)]
 
-| Week 1: July 1st–July 7th                                    | Week 2: July 8th–July 14th                                   | Week 3: July 15th–July 21st                                  | Week 4: July 22nd–July 28th | Week 5: July 29th–July 31st |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------- | --------------------------- |
-| [Arranging Coins](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/01_ArrangingCoins.playground/Contents.swift) | [3 Sum](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/08_3Sum.playground/Contents.swift) | [Reverse Words In a String](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/15_ReverseWordsInAString.playground/Contents.swift) |                             |                             |
-| [Binary Tree Level Order Traversal-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/02_BinaryTreeLevelOrderTraversal-II.playground/Contents.swift) | [Maximum Width of Binary Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/09_MaximumWidthOfBinaryTree.playground/Contents.swift) | [Pow(x,n)](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/16_Pow(x%2Cn).playground/Contents.swift) |                             |                             |
-| [Prison Cells After N Days](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/03_PrisonCellsAfterNDays.playground/Contents.swift) | [Flatten a Multilevel Doubly LinkedList](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/10_FlattenAMultilevelDoublyLinkedList.playground/Contents.swift) | [Top K Frequent Elements](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/17_TopKFrequentElements.playground/Contents.swift) |                             |                             |
-| [Ugly Number-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/04_UglyNumberII.playground/Contents.swift) | [Subsets](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/11_Subsets.playground/Contents.swift) | [Course Schedule - II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/18_CourseSchedule-II.playground/Contents.swift) |                             |                             |
-| [Hamming Distance](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/05_HammingDistance.playground/Contents.swift) | [Reverse Bits](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/12_ReverseBits.playground/Contents.swift) | [Remove LinkedList Elements](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/20_RemoveLinkedListElements.playground/Contents.swift) |                             |                             |
-| [Plus One](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/06_PlusOne.playground/Contents.swift) | [Same Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/13_SameTree.playground/Contents.swift) | [Word Search](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/21_WordSearch.playground/Contents.swift) |                             |                             |
-| [Island Perimeter](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/07_IslandPerimeter.playground/Contents.swift) | [Angle Between Hands of a Clock](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/14_AngleBetweenHandsOfAClock.playground/Contents.swift) | [Binary Tree Zigzag Level Order Traversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/22_BinaryTreeZigzagLevelOrderTraversal.playground/Contents.swift) |                             |                             |
+| Week 1: July 1st–July 7th                                    | Week 2: July 8th–July 14th                                   | Week 3: July 15th–July 21st                                  | Week 4: July 22nd–July 28th                                  | Week 5: July 29th–July 31st                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Arranging Coins](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/01_ArrangingCoins.playground/Contents.swift) | [3 Sum](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/08_3Sum.playground/Contents.swift) | [Reverse Words In a String](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/15_ReverseWordsInAString.playground/Contents.swift) | [Binary Tree Zigzag Level Order Traversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/22_BinaryTreeZigzagLevelOrderTraversal.playground/Contents.swift) | [Best Time to Buy and Sell Stock With Cooldown](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/29_BestTimeToBuyAndSellStockWithCooldown.playground/Contents.swift) |
+| [Binary Tree Level Order Traversal-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/02_BinaryTreeLevelOrderTraversal-II.playground/Contents.swift) | [Maximum Width of Binary Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/09_MaximumWidthOfBinaryTree.playground/Contents.swift) | [Pow(x,n)](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/16_Pow(x%2Cn).playground/Contents.swift) | [Single Number-III](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/23_SingleNumber-III.playground/Contents.swift) | [Word Break II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/30_WordBreak-II.playground/Contents.swift) |
+| [Prison Cells After N Days](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/03_PrisonCellsAfterNDays.playground/Contents.swift) | [Flatten a Multilevel Doubly LinkedList](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/10_FlattenAMultilevelDoublyLinkedList.playground/Contents.swift) | [Top K Frequent Elements](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/17_TopKFrequentElements.playground/Contents.swift) | [All Paths From Source To Target](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/24_AllPathsFromSourceToTarget.playground/Contents.swift) | [ClimbingStairs](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/31_ClimbingStairs.playground/Contents.swift) |
+| [Ugly Number-II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/04_UglyNumberII.playground/Contents.swift) | [Subsets](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/11_Subsets.playground/Contents.swift) | [Course Schedule - II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/18_CourseSchedule-II.playground/Contents.swift) | [Find Minimum In Rotated Sorted Array II](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/25_FindMinimumInRotatedSortedArray-II.playground/Contents.swift) |                                                              |
+| [Hamming Distance](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/05_HammingDistance.playground/Contents.swift) | [Reverse Bits](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/12_ReverseBits.playground/Contents.swift) | [Remove LinkedList Elements](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/20_RemoveLinkedListElements.playground/Contents.swift) | [Add Digits](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/26_AddDigits.playground/Contents.swift) |                                                              |
+| [Plus One](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/06_PlusOne.playground/Contents.swift) | [Same Tree](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/13_SameTree.playground/Contents.swift) | [Word Search](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/21_WordSearch.playground/Contents.swift) | [Construct Binary Tree from Inorder and Postorder Traversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/27_ConstructBinaryTreeFromInorderAndPostorderTraversal.playground/Contents.swift) |                                                              |
+| [Island Perimeter](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/07_IslandPerimeter.playground/Contents.swift) | [Angle Between Hands of a Clock](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/14_AngleBetweenHandsOfAClock.playground/Contents.swift) | [Binary Tree Zigzag Level Order Traversal](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/22_BinaryTreeZigzagLevelOrderTraversal.playground/Contents.swift) | [Task Scheduler](https://github.com/milanpanchal/LeetCode/tree/master/Swift/July%20Challenge/28_TaskScheduler.playground/Contents.swift) |                                                              |
 
 
 
@@ -172,6 +194,8 @@ Learning &amp; Solving Problems on LeetCode
 3. **Medium** ([https://medium.com/@milanpanchal24](https://medium.com/@milanpanchal24))
 4. **LinkedIn** ([/in/milanpanchal/](https://www.linkedin.com/in/milanpanchal/))
 2. **LeedCode** ([/milanpanchal](https://leetcode.com/milanpanchal/))
+
+
 
 ## Contributors
 
