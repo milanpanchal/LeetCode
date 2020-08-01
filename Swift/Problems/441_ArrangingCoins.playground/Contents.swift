@@ -1,5 +1,5 @@
 /*:
-# Arranging Coins
+# 441. Arranging Coins [Easy]
   https://leetcode.com/problems/arranging-coins/
  
  ---
