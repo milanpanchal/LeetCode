@@ -42,7 +42,7 @@ import UIKit
 
 // 28 / 28 test cases passed.
 // Status: Accepted
-// Runtime: 416 ms
+// Runtime: 396 ms
 // Memory Usage: 22.2 MB
 
 class MyHashSet {
