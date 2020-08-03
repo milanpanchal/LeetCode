@@ -15,7 +15,7 @@
  + `remove(value)`: Remove a value in the HashSet. If the value does not exist in the HashSet, do nothing.
  
  ### Example:
- 
+
  ```
  MyHashSet hashSet = new MyHashSet();
  hashSet.add(1);
@@ -26,7 +26,6 @@
  hashSet.contains(2);    // returns true
  hashSet.remove(2);
  hashSet.contains(2);    // returns false (already removed)
- 
  ```
  
  ### Notes:
@@ -78,10 +77,8 @@ class MyHashSet {
     /** Returns true if this set contains the specified element */
     func contains(_ key: Int) -> Bool {
         return table[hash(key)].firstIndex(of: key) != nil
-        
     }
 }
-
 
 // Your MyHashSet object will be instantiated and called as such:
 
@@ -94,5 +91,3 @@ obj.remove(2)
 let ret_1: Bool = obj.contains(1)
 let ret_2: Bool = obj.contains(2)
 let ret_3: Bool = obj.contains(3)
-
-
