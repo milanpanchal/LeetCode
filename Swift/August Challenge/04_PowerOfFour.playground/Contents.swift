@@ -32,6 +32,12 @@ class Solution {
     func isPowerOfFour(_ num: Int) -> Bool {
         return num > 0 && (num & (num - 1)) == 0 && (num - 1) % 3 == 0
     }
+
+    func isPowerOfFour2(_ num: Int) -> Bool {
+        let logValue = log(Double(num)) / log(4)
+        return num > 0 && logValue == trunc(logValue)
+    }
+
 }
 
 let sol = Solution()
