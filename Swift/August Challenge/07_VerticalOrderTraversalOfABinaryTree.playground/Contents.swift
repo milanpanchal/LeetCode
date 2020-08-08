@@ -81,9 +81,34 @@ import UIKit
      }
  }
  
+// 30 / 30 test cases passed.
+// Status: Accepted
+// Runtime: 12 ms
+// Memory Usage: 22.6 MB
+
 class Solution {
+    
+    // Cache = [column: [(row, value)]]
+    private var cache = [Int: [(rowIndex: Int, value: Int)]]()
+    
     func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
-        return [[]]
+        
+        dfs(root, 0, 0)
+        return cache.keys.sorted().map {
+            cache[$0]!.sorted {
+                $0.rowIndex == $1.rowIndex ? ($0.value < $1.value) : ($0.rowIndex >= $1.rowIndex)
+            }.map {
+                $0.value
+            }
+        }
+    }
+    
+    private func dfs(_ root: TreeNode?, _ x: Int, _ y: Int){
+        guard let root = root else { return }
+        
+        cache[x, default: [(Int,Int)]()].append((y, root.val))
+        dfs(root.left, x - 1, y - 1)
+        dfs(root.right, x + 1, y - 1)
     }
 }
 
