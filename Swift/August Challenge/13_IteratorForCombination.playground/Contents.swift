@@ -38,27 +38,49 @@
 
  */
 
-
 import UIKit
 
 
+// 16 / 16 test cases passed.
+// Status: Accepted
+// Runtime: 68 ms
+// Memory Usage: 21.8 MB
+
 class CombinationIterator {
 
+    private var queue = [String]()
+    
     init(_ characters: String, _ combinationLength: Int) {
-        
+        generateCombinations(Array(characters), combinationLength, 0, "")
     }
     
     func next() -> String {
-        
+        return queue.removeFirst()
     }
     
     func hasNext() -> Bool {
-        
+        return !queue.isEmpty
     }
+    
+    private func generateCombinations(_ characters: [Character], _ len: Int, _ index: Int, _ temp: String) {
+        if temp.count == len {
+            queue.append(temp)
+            return
+        }
+        
+        for i in index..<characters.count {
+            generateCombinations(characters, len, i + 1, temp + String(characters[i]))
+        }
+    }
+          
 }
 
 // Your CombinationIterator object will be instantiated and called as such:
 let obj = CombinationIterator("abc", 2)
 let ret_1: String = obj.next() // ab
 let ret_2: Bool = obj.hasNext() // true
+let ret_3: String = obj.next() // ac
+let ret_4: Bool = obj.hasNext() // true
+let ret_5: String = obj.next() // bc
+let ret_6: Bool = obj.hasNext() // false
 
