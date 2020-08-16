@@ -47,9 +47,74 @@
 
 import UIKit
 
+// 200 / 200 test cases passed.
+// Status: Accepted
+// Runtime: 44 ms
+// Memory Usage: 21.1 MB
+
 class Solution {
     func maxProfit(_ prices: [Int]) -> Int {
-        return 0
+        
+        var profits = [Int](repeating: 0, count: prices.count)
+        var ma = prices.last ?? 0
+        
+        for i in stride(from: prices.count - 2, through: 0, by: -1) {
+            profits[i] = max(profits[i + 1], ma - prices[i])
+            ma = max(ma, prices[i])
+        }
+        
+        var result = profits.first ?? 0
+        var mi = Int.max
+        
+        for i in 0..<prices.count {
+            result = max(result, prices[i] - mi + (i < prices.count - 1 ? profits[i + 1] : 0))
+            mi = min(mi, prices[i])
+        }
+        return result
+    }
+}
+
+class Solution1 {
+    func maxProfit(_ prices: [Int]) -> Int {
+        guard prices.count > 1 else {
+            return 0
+        }
+        
+        var lProfit = prices.map { _ in 0 }
+        var leftMin = prices[0]
+        var lProfixMax = 0
+        
+        for i in 0..<prices.count {
+            if prices[i] > leftMin {
+                lProfixMax = max(lProfixMax, prices[i] - leftMin)
+            } else {
+                leftMin = prices[i]
+            }
+            lProfit[i] = lProfixMax
+        }
+        
+        var rightMax = prices[prices.count-1]
+        var rProfit = prices.map { _ in 0 }
+        var rProfitMax = 0
+        
+        for i in (0..<prices.count).reversed() {
+            if rightMax > prices[i] {
+                rProfitMax = max(rProfitMax, rightMax - prices[i])
+            } else {
+                rightMax = prices[i]
+            }
+            rProfit[i] = rProfitMax
+        }
+        
+
+        var result = lProfit.max()! // one transaction
+        for i in 0..<prices.count {
+            let left = lProfit[i]
+            let right = (i + 1 < prices.count) ? rProfit[i+1] : 0
+            result = max(result, left + right) // two transactions
+        }
+        
+        return result
     }
 }
 
@@ -57,3 +122,8 @@ let sol = Solution()
 sol.maxProfit([3,3,5,0,0,3,1,4])    // 6
 sol.maxProfit([1,2,3,4,5])          // 4
 sol.maxProfit([7,6,4,3,1])          // 0
+
+let sol1 = Solution1()
+sol1.maxProfit([3,3,5,0,0,3,1,4])    // 6
+sol1.maxProfit([1,2,3,4,5])          // 4
+sol1.maxProfit([7,6,4,3,1])          // 0
