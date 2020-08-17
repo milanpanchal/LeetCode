@@ -54,9 +54,35 @@
 
 import UIKit
 
+// 27 / 27 test cases passed.
+// Status: Accepted
+// Runtime: 0 ms
+// Memory Usage: 21.1 MB
+
 class Solution {
     func distributeCandies(_ candies: Int, _ num_people: Int) -> [Int] {
-        return []
+        
+        var candies = candies
+        var count = 1
+        var result = Array(repeating: 0, count: num_people)
+        var i = 0
+        while candies > 0 {
+            
+            if count > candies {
+                count = candies
+            }
+            result[i] += count
+            candies -= count
+            count += 1
+            i += 1
+            // Reset array position
+            if i == num_people {
+                i = 0
+            }
+            
+            
+        }
+        return result
     }
 }
 
