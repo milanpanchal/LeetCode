@@ -40,14 +40,51 @@
 
 import UIKit
 
+extension Character {
+    var isVowel: Bool {
+        switch self {
+        case "a", "e", "i", "o", "u", "A", "E", "I", "O", "U":
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+// 99 / 99 test cases passed.
+// Status: Accepted
+// Runtime: 16 ms
+// Memory Usage: 21.7 MB
+
 class Solution {
+    
     func toGoatLatin(_ S: String) -> String {
-        return ""
+        
+        let words = S.components(separatedBy: " ")
+        var resultString = ""
+        var extraWord = ""
+        
+        for word in words {
+            
+            extraWord += "a"
+            
+            var convertedWord = word
+            if !(word.first!.isVowel) {
+                let first = convertedWord.removeFirst()
+                convertedWord += String(first)
+            }
+            
+            resultString += "\(convertedWord)ma\(extraWord) "
+        }
+        
+        resultString.removeLast()
+        return resultString
     }
 }
 
 let sol = Solution()
 sol.toGoatLatin("I speak Goat Latin") // Imaa peaksmaaa oatGmaaaa atinLmaaaaa
+
 
 // Output:
 // heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa
